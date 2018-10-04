@@ -1,0 +1,63 @@
+<html>
+
+<body>
+<p>Can you find the names of 25 books of the Bible in this paragraph? This is a most remarkable puzzle.
+ Someone found it in the seat pocket on a flight from Los Angeles to Honolulu, keeping himself occupied for hours.
+  One man from Illinois worked on this while fishing from his john boat. Roy Clark studied it while playing his banjo.
+  Elaine Victs mentioned it in her column once. One woman judges the job to be so involving, she brews a cup of tea to
+  help calm her nerves. There will be some names that are really easy to spot that’s a fact. Some people will soon find
+  themselves in a jam, especially since the book names are not necessarily capitalized. The truth is, from answers
+  we get, we are forced to admit it usually takes a minister or scholar to see some of them at the worst.
+  Something in our genes is responsible for the difficulty we have. Those able to find all of them will hear
+  great lamentations from those who have to be shown. One revelation may help, books like! Timothy and Samuel
+  may occur without their numbers. And punctuation or spaces in the middle are normal.
+  A chipper attitude will help you compete. Remember, there are 25 books of the Bible lurking
+ somewhere in this paragraph. Greater love hath no man than this, that a man lay down his life for his friends. John 15:13.</p>
+  <script>
+var books = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges'
+, 'Ruth', 'Samuel', 'Samuel', 'Kings', 'Kings', 'Chronicles', 'Chronicles', 'Ezra', 'Nehemiah',
+'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon', 'Isaiah', 'Jeremiah',
+'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah',
+'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi', 'Matthew',
+'Mark', 'Luke', 'John', 'Acts', 'Romans', 'Corinthians', 'Galatians', 'Ephesians', 'Philippians',
+'Colossians', 'Thessalonians', 'Timothy', 'Timothy', 'Titus', 'Philemon', 'Hebrews', 'James',
+'Peter', 'Peter', 'John', 'Jude', 'Revelation'];
+
+
+
+var puzzle = 'Can you find the names of 25 books of the Bible in this paragraph? This is a most remarkable puzzle.\
+ Someone found it in the seat pocket on a flight from Los Angeles to Honolulu, keeping himself occupied for hours.\
+  One man from Illinois worked on this while fishing from his john boat. Roy Clark studied it while playing his banjo. \
+  Elaine Victs mentioned it in her column once. One woman judges the job to be so involving, she brews a cup of tea to \
+  help calm her nerves. There will be some names that are really easy to spot that’s a fact. Some people will soon find \
+  themselves in a jam, especially since the book names are not necessarily capitalized. The truth is, from answers\
+  we get, we are forced to admit it usually takes a minister or scholar to see some of them at the worst. \
+  Something in our genes is responsible for the difficulty we have. Those able to find all of them will hear \
+  great lamentations from those who have to be shown. One revelation may help, books like! Timothy and Samuel \
+  may occur without their numbers. And punctuation or spaces in the middle are normal. \
+  A chipper attitude will help you compete. Remember, there are 25 books of the Bible lurking \
+ somewhere in this paragraph. Greater love hath no man than this, that a man lay down his life for his friends. John 15:13.';
+// Remove punctuation and spaces and set to lowercase
+
+var matcher = /[a-z]+/gi;
+var matches = puzzle.match(matcher);
+var result = matches.join('');
+
+//Search results for books and return those found
+
+let found = [];
+puzzle = puzzle.replace(/\W/g,'').toLowerCase();
+for(let i = 0; i < books.length; i++) {
+  const index = puzzle.search(books[i].toLowerCase());
+  if(index >= 0 && found.indexOf(books[i]) == -1) {
+    found.push(books[i]);
+    console.log(index);
+  }
+}
+
+console.log(found);
+
+</script>
+</body>
+
+</html>
