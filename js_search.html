@@ -37,23 +37,18 @@ var puzzle = 'Can you find the names of 25 books of the Bible in this paragraph?
   may occur without their numbers. And punctuation or spaces in the middle are normal. \
   A chipper attitude will help you compete. Remember, there are 25 books of the Bible lurking \
  somewhere in this paragraph. Greater love hath no man than this, that a man lay down his life for his friends. John 15:13.';
-// Remove punctuation and spaces and set to lowercase
-
-var matcher = /[a-z]+/gi;
-var matches = puzzle.match(matcher);
-var result = matches.join('');
 
 //Search results for books and return those found
 
 let found = [];
 puzzle = puzzle.replace(/\W/g,'').toLowerCase();
 for(let i = 0; i < books.length; i++) {
-  const index = puzzle.search(books[i].toLowerCase());
+    const index = puzzle.search(books[i].toLowerCase());
   if(index >= 0 && found.indexOf(books[i]) == -1) {
     found.push(books[i]);
-    console.log(index);
   }
 }
+
 
 console.log(found);
 
