@@ -1,6 +1,32 @@
+<!DOCTYPE html>
 <html>
+<head>
 
+
+<style>
+#canvas {
+  width: 800px;
+  font-family: sans-serif;
+
+  margin: auto;
+}
+h1 {
+  text-align: center;
+}
+
+#thebooks {
+     width: 100%;
+     padding: 50px 0;
+     text-align: center;
+     background-color: lightblue;
+     margin-top: 20px;
+     display: none;
+   }
+</style>
 <body>
+  <div id = "canvas">
+  <h1> Can you find 25 books of the Bible in the paragraph below.</h1>
+
 <p>Can you find the names of 25 books of the Bible in this paragraph? This is a most remarkable puzzle.
  Someone found it in the seat pocket on a flight from Los Angeles to Honolulu, keeping himself occupied for hours.
   One man from Illinois worked on this while fishing from his john boat. Roy Clark studied it while playing his banjo.
@@ -13,7 +39,30 @@
   may occur without their numbers. And punctuation or spaces in the middle are normal.
   A chipper attitude will help you compete. Remember, there are 25 books of the Bible lurking
  somewhere in this paragraph. Greater love hath no man than this, that a man lay down his life for his friends. John 15:13.</p>
+
+
+
+
+ <input id="booksButton" type="button" value="Books of The Bible" onclick="showBooks();" />
+<div id="thebooks">
+<p id="allbooks"></p>
+</div>
+</div>
+
   <script>
+  function showBooks() {
+    var x = document.getElementById("thebooks");
+    if (x.style.display === "none") {
+        x.style.display = "block"
+        var str = books.toString();
+        document.getElementById("allbooks").innerHTML = str;
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+
 var books = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges'
 , 'Ruth', 'Samuel', 'Samuel', 'Kings', 'Kings', 'Chronicles', 'Chronicles', 'Ezra', 'Nehemiah',
 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon', 'Isaiah', 'Jeremiah',
