@@ -23,12 +23,18 @@ h1 {
    }
 #booksFound {
   width: 100%;
-  padding: 50px 0;
+  height: 50px;
+  padding: 20px;
   text-align: center;
   background-color: lightblue;
-  margin-top: 20px;
+
  display: none;
 
+}
+li {
+  float: left;
+  margin-right: 20px;
+  list-style: none;
 }
 </style>
 
@@ -97,7 +103,7 @@ somewhere in this paragraph. Greater love hath no man than this, that a man lay 
       for (let i = 0; i < books.length; i++) {
         const index = puzzle.search(books[i].toLowerCase());
         if (index >= 0 && found.indexOf(books[i]) == -1) {
-          found.push(books[i]);
+            found.push("<li>" + books[i] + "</li>");
         }
       }
 
@@ -110,7 +116,9 @@ somewhere in this paragraph. Greater love hath no man than this, that a man lay 
         if (x.style.display === "none") {
           x.style.display = "block"
           var str = books.toString();
-          document.getElementById("thebooks").innerHTML = str;
+          console.log(books);
+          document.getElementById("thebooks").innerHTML = books;
+
           } else {
           x.style.display = "none";
         }
@@ -121,7 +129,8 @@ somewhere in this paragraph. Greater love hath no man than this, that a man lay 
           if(f.style.display ==="none"){
             f.style.display = "block"
             var foundStr = found.toString();
-            document.getElementById("booksFound").innerHTML = foundStr;
+            foundthem = foundStr.replace(/,/g,"");
+            document.getElementById("booksFound").innerHTML = foundthem;
           } else {
           f.style.display = "none";
 
